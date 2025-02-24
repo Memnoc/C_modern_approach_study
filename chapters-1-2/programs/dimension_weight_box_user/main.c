@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+#define INCHES_PER_POUND 166
+
 int main(void) {
   printf("=== Compute Dimension of a Box by User input ===\n");
   int height, width, length, weight, volume;
@@ -11,7 +13,7 @@ int main(void) {
   scanf("%d", &width);
 
   volume = height * width * length;
-  weight = (volume + 165) / 166;
+  weight = (volume + INCHES_PER_POUND - 1) / INCHES_PER_POUND;
   printf("Volume: %d\n ", volume);
   printf("Weight: %d\n ", weight);
 
